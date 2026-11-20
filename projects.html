@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya | Tech Portfolio</title>
+    <meta name="description" content="Modern interactive technology portfolio of Aditya">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Background Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-tag">&lt;</span>
+            <span class="logo-text">Aditya.dev</span>
+            <span class="logo-tag">/&gt;</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#home">// Home</a>
+            <a href="index.html#about">// About</a>
+            <a href="index.html#journey">// Journey</a>
+            <a href="projects.html" class="active">// Projects</a>
+            <a href="index.html#products">// Products</a>
+            <a href="services.html">// Services</a>
+            <a href="index.html#contact">// Contact</a>
+        </div>
+        <div class="hamburger">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html#home">00. Home</a>
+        <a href="index.html#about">01. About</a>
+        <a href="index.html#journey">02. Journey</a>
+        <a href="projects.html" class="active">03. Projects</a>
+        <a href="index.html#products">04. Products</a>
+        <a href="services.html">05. Services</a>
+        <a href="index.html#contact">06. Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- All Projects Section -->
+        <section id="projects" class="projects section" style="padding-top: 150px;">
+            <h2 class="section-title"><span class="title-num">03.</span> All Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Women Safety Device <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">Women Safety Device is an IoT-based solution designed to ensure personal security. It features live location tracking, SOS messaging, and an automatic call system to registered contacts. Recognized as an award-winning project.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>Hardware</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Anti Sleep Alarm <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">IoT-based system designed to prevent road accidents caused by driver drowsiness. It uses sensors on the steering wheel to detect when the driver falls asleep, activating a buzzer and safely slowing the car.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>Arduino</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Smart Bin <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">Smart Dustbin is an IoT-enabled waste management system designed for automation and hygiene. It uses ultrasonic sensors to automatically open the lid and monitors dustbin fill levels.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>Sensors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Robotic Arm <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">Arduino-based system designed to pick and move objects efficiently. It uses servo motors and a TCS3200 color sensor to detect and lift objects based on color or position.</p>
+                        <div class="project-tech">
+                            <span>Robotics</span>
+                            <span>Arduino</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://github.com/aspatil0/Mission-Feed-India-_Food-Redistribution-Web-Platform" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Mission Feed India <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Social initiative dedicated to reducing hunger by providing meals to underprivileged people. Focused on community service and awareness.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Frontend Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://aditya-geminiai.vercel.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Gemini Clone <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Building the Gemini clone using React and Gemini API. It saves history and allows searching on prompts.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Gemini API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://aditya-geminiai.vercel.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Quiz Site <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A basic quiz site using HTML, CSS, and JS built just for playing language quizzes.</p>
+                        <div class="project-tech">
+                            <span>Frontend Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://github.com/aspatil0/MY-PHP-PROJECTS/tree/main/CC-LAB-PROJECT" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>CC-Lab Management <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Developed a Computer Lab Management System using HTML, CSS, JavaScript, and PHP for efficient resource handling. The platform allows managing systems, schedules, and lab usage.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://github.com/aspatil0/MY-PHP-PROJECTS/tree/main/HOSPITAL%20MANAGEMNET" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Hospital Management Site <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Built a Hospital Management Website using PHP, MySQL, HTML, CSS, and JavaScript for seamless hospital operations, managing patient records, and doctor schedules efficiently.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://aditya-tictactoe.vercel.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Tic-Tac-Toe <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Building the game of Tic Tac Toe using neon effects to enhance the view. The winner name is shown dynamically.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Frontend Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://adi-todo.netlify.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>To Do List Website <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Building the To-Do site to manage my own work. Also has LocalStorage that helps to store data persistently in the browser.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://devine-tech.netlify.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Business DevineTech Site <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A business site built to provide a platform for student internships and comprehensive client management for my startup.</p>
+                        <div class="project-tech">
+                            <span>Frontend Tech</span>
+                            <span>Local Storage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 13 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://tesnary.netlify.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>E-Stationary Site <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">An e-commerce platform designed for local shop owners to manage their business offline seamlessly, without requiring external database purchases.</p>
+                        <div class="project-tech">
+                            <span>Frontend Tech</span>
+                            <span>Local Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="btn primary-btn" data-cursor="hover">
+                    <i class='bx bx-left-arrow-alt'></i> <span>Back to Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with <i class='bx bx-code-alt'></i> by Adityaraj Patil</p>
+        <p class="footer-sub">&copy; 2026 Adityaraj Patil. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya | Tech Portfolio</title>
+    <meta name="description" content="Modern interactive technology portfolio of Aditya">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Background Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-tag">&lt;</span>
+            <span class="logo-text">Aditya.dev</span>
+            <span class="logo-tag">/&gt;</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">// Home</a>
+            <a href="#about">// About</a>
+            <a href="#journey">// Journey</a>
+            <a href="#projects">// Projects</a>
+            <a href="#products">// Products</a>
+            <a href="#books">// Books</a>
+            <a href="services.html">// Services</a>
+            <a href="#contact">// Contact</a>
+        </div>
+        <div class="hamburger">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#home" class="active">00. Home</a>
+        <a href="#about">01. About</a>
+        <a href="#journey">02. Journey</a>
+        <a href="#projects">03. Projects</a>
+        <a href="#products">04. Products</a>
+        <a href="#books">05. Books</a>
+        <a href="services.html">06. Services</a>
+        <a href="#contact">07. Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="hero-content glow-panel">
+                <p class="greeting">Hi, I'm <span class="highlight">Adityaraj Patil</span></p>
+                <h1 class="glitch" data-text="Full Stack Developer">Full Stack Developer</h1>
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <div class="typing-container" style="margin-bottom: 0px; height: auto;">
+                        <span class="typing-text"></span><span class="cursor"></span>
+                    </div>
+
+                </div>
+                <p class="hero-desc">Passionate about crafting fast, scalable web applications and building immersive
+                    digital architectures.</p>
+                <div class="hero-cta" style="margin-bottom: 20px;">
+                    <a href="#projects" class="btn primary-btn" data-cursor="hover">View Work <i
+                            class='bx bx-right-arrow-alt'></i></a>
+                    <a href="#contact" class="btn secondary-btn" data-cursor="hover">Contact Me</a>
+                </div>
+                <div class="hero-cta" style="margin-top: 0;">
+                    <a href="services.html" class="btn secondary-btn" data-cursor="hover"
+                        style="border-color: var(--secondary); color: var(--text-main);">
+                        <i class='bx bx-briefcase-alt'></i> All Services
+                    </a>
+                    <a href="assets/Adityaraj_sunil_patil_Comput_Eng.pdf" target="_blank" class="service-chip"
+                        data-cursor="hover"
+                        style="border-color: var(--primary); color: var(--primary); text-decoration: none; padding: 6px 14px; display: inline-flex; align-items: center; gap: 5px; font-weight: 500;"
+                        download>
+                        <i class='bx bx-cloud-download' style="font-size: 1.1rem;"></i> Resume
+                    </a>
+                    <a href="#books" class="service-chip books-glow-btn" data-cursor="hover">
+                        <i class='bx bx-book-bookmark'></i> My Books
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/aspatil0" target="_blank" data-cursor="hover"><i
+                            class='bx bxl-github'></i></a>
+                    <a href="https://linkedin.com/in/adityarajpatil/" target="_blank" data-cursor="hover"><i
+                            class='bx bxl-linkedin'></i></a>
+                    <a href="https://x.com/itsme_asp" target="_blank" data-cursor="hover"><i
+                            class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="showcase-card glass-card">
+                    <div class="showcase-header">
+                        <i class='bx bx-trophy'></i>
+                        <span>Track Record</span>
+                    </div>
+                    <div class="showcase-grid">
+                        <div class="showcase-item" data-cursor="hover">
+                            <i class='bx bx-certification'></i>
+                            <span class="showcase-val">2</span>
+                            <span class="showcase-label">Self Patented Projects</span>
+                        </div>
+                        <div class="showcase-item" data-cursor="hover">
+                            <i class='bx bx-microchip'></i>
+                            <span class="showcase-val">IoT</span>
+                            <span class="showcase-label">Research Paper</span>
+                        </div>
+                        <div class="showcase-item" data-cursor="hover">
+                            <i class='bx bx-medal'></i>
+                            <span class="showcase-val">2×</span>
+                            <span class="showcase-label">Hackathon Winner<br/><small>TCOER · VIT</small></span>
+                        </div>
+                        <div class="showcase-item" data-cursor="hover">
+                            <i class='bx bx-book-open'></i>
+                            <span class="showcase-val">6</span>
+                            <span class="showcase-label">Books Authored</span>
+                        </div>
+                        <div class="showcase-item" data-cursor="hover">
+                            <i class='bx bx-group'></i>
+                            <span class="showcase-val">1500+</span>
+                            <span class="showcase-label">Students Trained</span>
+                        </div>
+                        <div class="showcase-item" data-cursor="hover">
+                            <i class='bx bx-briefcase-alt-2'></i>
+                            <span class="showcase-val">Ind.</span>
+                            <span class="showcase-label">Industry-Level Products</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <h2 class="section-title"><span class="title-num">01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text glass-card">
+                    <p>Hello! I'm Adityaraj Patil, a full-stack developer passionate about crafting fast, scalable web
+                        applications and innovative tech products.</p>
+                    <p>I am the Founder & CEO of DevineTech Solutions, and Co-Founder & Partner at Menteronics. I've also had the
+                        privilege of serving as the Student Council President at Trinity College of Engineering and
+                        Research, where I led technical communities and hands-on web development sessions.</p>
+                    <p>I have experience building complex platforms like Flatmate(Myrommies)  and
+                        IoT-driven projects. Here are a few technologies I've been working with:</p>
+                    <ul class="skills-list">
+                        <li><i class='bx bxl-javascript'></i> JavaScript / MERN</li>
+                        <li><i class='bx bxl-react'></i> React & Next.js</li>
+                        <li><i class='bx bxl-nodejs'></i> Node.js & Express</li>
+                        <li><i class='bx bx-data'></i> MongoDB & MySQL</li>
+                        <li><i class='bx bxl-php'></i> PHP</li>
+                        <li><i class='bx bx-chip'></i> IoT & Embedded systems</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper glass-card">
+                        <!-- User Avatar -->
+                        <img src="assets/profile.jpg" alt="Adityaraj Patil"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-wrapper">
+                <div class="achievements-grid">
+                    <a href="#books" class="achievement-card books-cta" data-cursor="hover">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="highlight-gold">Books by me</span>
+                        <span class="ach-text">Written & published on Kindle — Horror, Love & more</span>
+                        <span class="books-cta-link">Browse My Books <i class='bx bx-right-arrow-alt'></i></span>
+                    </a>
+                    <div class="achievement-card" data-cursor="hover">
+                        <i class='bx bx-laptop'></i>
+                        <span class="ach-text" style="font-size: 0.85rem;">Full Stack Developer @ Dexpert System Pvt.
+                            Ltd.</span>
+                    </div>
+                    <div class="achievement-card" data-cursor="hover">
+                        <i class='bx bx-group'></i>
+                        <span class="highlight-gold">1500+</span>
+                        <span class="ach-text">Give Training to Students</span>
+                    </div>
+                    <div class="achievement-card" data-cursor="hover">
+                        <i class='bx bx-rocket'></i>
+                        <span class="highlight-gold">17+</span>
+                        <span class="ach-text">Projects Built</span>
+                    </div>
+                    <div class="achievement-card" data-cursor="hover">
+                        <i class='bx bx-cube-alt'></i>
+                        <span class="highlight-gold">5+</span>
+                        <span class="ach-text">Saas Products Upcoming</span>
+                    </div>
+                    <div class="achievement-card" data-cursor="hover">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="ach-text" style="font-size: 0.85rem;">Manage 3+ Teams &<br>13+
+                            Projects</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Download Section -->
+
+
+        <!-- Journey Section -->
+        <section id="journey" class="journey section">
+            <h2 class="section-title"><span class="title-num">02.</span> My Journey</h2>
+
+            <div class="journey-container">
+                <div class="journey-column">
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>TRINITY COLLEGE STUDENT COUNCIL PRESIDENT</h4>
+                        <p class="year">2022 - 2023</p>
+                        <p class="description">Served as the President of Trinity College of Engineering and Research
+                            (2022–2023), leading student initiatives, events, and technical communities. Organized and
+                            managed college‑wide programs, fostering innovation and collaboration among 1500+ students.
+                        </p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>CONDUCT 20+ SESSIONS ON TECH DEVELOPMENT</h4>
+                        <p class="year">2024-2025</p>
+                        <p class="description">Conducted 20+ hands‑on sessions on Web Development at TCOER, training and
+                            mentoring 350+ students. Focused on modern web technologies, enhancing students’ practical
+                            skills and project readiness.</p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>GOOGLE DEVLOPER GROUP(GDG) WEB DEV LEAD</h4>
+                        <p class="year">2024-2025</p>
+                        <p class="description">Google Developer Student Club (GDSC) – Web Development Lead (2024–2025),
+                            spearheading all web projects and initiatives. Led workshops, mentorship sessions, and team
+                            projects, enhancing students’ web development skills and community engagement.</p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>Recognized for Projects</h4>
+                        <p class="year">2024</p>
+                        <p class="description">Recognized for developing multiple innovative projects, including a Women
+                            Safety Device (Winner – TCOER Technical Exhibition 2024, Runner‑up – VIT Hackathon 2024) and
+                            an IoT‑based QR Fraud Detection Scanner. Also created a Color‑Detecting Robotic Arm and
+                            CoupleMate, an AI/ML‑powered matchmaking and real‑time chat platform.</p>
+                    </div>
+                </div>
+
+                <div class="journey-column">
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>HACKETHON WINNER</h4>
+                        <p class="year">2024</p>
+                        <p class="description">Winner of TCOER Technical Exhibition 2024 for developing an innovative
+                            Women Safety Device. Runner‑up at VIT National Level Hackathon 2024, showcasing the same
+                            project among top competing teams.</p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>CORE Vice President</h4>
+                        <p class="year">2024-2025</p>
+                        <p class="description">Served as Vice President of the Computer Core Committee, leading
+                            technical events and student initiatives. Coordinated workshops, coding challenges, and
+                            inter‑college competitions to enhance the technical culture in the department.</p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>Founder & CEO Devine tech</h4>
+                        <p class="year">2025</p>
+                        <p class="description">Founder & CEO of DevineTech (2025–Present), a startup providing web
+                            development, digital solutions, and IoT services. Built and managed multiple client
+                            projects, internships, and training programs, fostering innovation and technical growth.</p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>Co-Founder & Partner Menteronics</h4>
+                        <p class="year">2025</p>
+                        <p class="description">Co‑Founder & Partner at Menteronics, formed through the merger of
+                            NodeMedia and DevineTech. Collaborated on tech innovation, training programs, and digital
+                            solutions, driving growth and joint ventures.</p>
+                    </div>
+                    <div class="journey-card glass-card" data-cursor="hover">
+                        <h4>IOT CLUB LEAD</h4>
+                        <p class="year">2025</p>
+                        <p class="description">Lead of IOT Club By which I help students to build projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <h2 class="section-title"><span class="title-num">03.</span> Featured Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Women Safety Device <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">Women Safety Device is an IoT-based solution designed to ensure personal
+                            security. It features live location tracking, SOS messaging, and an automatic call system.
+                            Recognized as an award-winning project.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>Hardware</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Anti Sleep Alarm <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">IoT-based system designed to prevent road accidents caused by driver
+                            drowsiness. It uses sensors on the steering wheel to detect when the driver falls asleep,
+                            activating a buzzer.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>Arduino</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Smart Bin <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">Smart Dustbin is an IoT-enabled waste management system designed for
+                            automation and hygiene. It uses ultrasonic sensors to automatically open the lid and
+                            monitors dustbin fill levels.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>Sensors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Robotic Arm <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">Arduino-based system designed to pick and move objects efficiently. It
+                            uses servo motors and a TCS3200 color sensor to detect and lift objects based on color or
+                            position.</p>
+                        <div class="project-tech">
+                            <span>Robotics</span>
+                            <span>Arduino</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://github.com/aspatil0/Mission-Feed-India-_Food-Redistribution-Web-Platform"
+                                target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Mission Feed India <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Social initiative dedicated to reducing hunger by providing meals to
+                            underprivileged people. Focused on community service and awareness.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-folder'></i>
+                        <div class="project-links">
+                            <a href="https://aditya-geminiai.vercel.app/" target="_blank"><i
+                                    class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Gemini Clone <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">Building the Gemini clone using React and Gemini API. It saves history
+                            and allows searching on prompts through a responsive interface.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Gemini API</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="projects.html" class="btn primary-btn" data-cursor="hover">
+                    <span>See All Projects</span> <i class='bx bx-right-arrow-alt'></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="projects section">
+            <h2 class="section-title"><span class="title-num">04.</span> My Products</h2>
+            <div class="projects-grid">
+
+                <!-- Product 1 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-cube-alt'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Women Safety Device <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">A portable safety gadget for women designed to provide immediate help
+                            during dangerous situations. When the panic button is pressed, the device sends the live GPS
+                            location via GSM, makes an emergency call, activates a buzzer alarm, and may also include a
+                            shock mechanism for self-defense.</p>
+                        <div class="project-tech">
+                            <span>Hardware</span>
+                            <span>IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-scan'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Novel Scanner for Scam Detection <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 4px; color: var(--primary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-check-shield'></i> &copy; Copyrighted & Patented</span></h3>
+                        <p class="project-desc">A smart scanner system that checks QR codes and transaction IDs to
+                            detect fraudulent payments or scams. Verifies the transaction with a database or API, and if
+                            invalid, triggers a warning to prevent digital payment fraud.</p>
+                        <div class="project-tech">
+                            <span>IoT</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-network-chart'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Node Net <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A decentralized networking platform where multiple companies (nodes)
+                            connect and share resources directly without relying on anyone. Enables secure data sharing,
+                            distributed computing, and collaborative networking.</p>
+                        <div class="project-tech">
+                            <span>Decentralized</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-home-heart'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Flatmate <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A roommate-finding platform that helps people find compatible flatmates
+                            based on preferences such as budget, lifestyle, location, and habits. Users create profiles,
+                            search for rooms, and communicate securely.</p>
+                        <div class="project-tech">
+                            <span>Web App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-code-block'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>ParseMe <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A code and text analysis tool designed to parse, analyze, and structure
+                            data from documents or programming code. Helps developers understand syntax, detect errors,
+                            and convert unstructured text.</p>
+                        <div class="project-tech">
+                            <span>Developer Tool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Te Amo – Couple Platform <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A relationship platform for couples that helps partners strengthen their
+                            bond through shared memories, private chats, mood tracking, love notes, reminders, and
+                            relationship activities.</p>
+                        <div class="project-tech">
+                            <span>Web App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-user-voice'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>You and Me – Random Blind Date <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A blind dating platform where users are randomly matched with another
+                            person based on interests, personality, or location. Creates spontaneous connections and
+                            conversations for a safe online blind date experience.</p>
+                        <div class="project-tech">
+                            <span>Web App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="project-card glass-card" data-cursor="hover">
+                    <div class="project-header">
+                        <i class='bx bx-book-reader'></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Engi World <span class="patented-badge" style="font-size: 0.55rem; padding: 3px 6px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 4px; color: var(--secondary); vertical-align: middle; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap;"><i class='bx bx-bulb'></i> &copy; Idea & Research Paper Copyrighted</span></h3>
+                        <p class="project-desc">A platform for engineering students that provides learning resources,
+                            projects, coding materials, internships, and networking opportunities. A community hub where
+                            engineers share knowledge and grow their careers.</p>
+                        <div class="project-tech">
+                            <span>Platform</span>
+                            <span>Community</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books" class="books section">
+            <h2 class="section-title"><span class="title-num">05.</span> My Books</h2>
+            <p class="books-intro">I've authored multiple books spanning horror, romance, and tech. Some are published on <strong>Amazon Kindle</strong> — each one crafted to tell a story that stays with you.</p>
+            <div class="books-grid">
+
+                <!-- Book 1 -->
+                <div class="book-card glass-card" data-cursor="hover">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book1/300/400" alt="Book Cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <h3>The Silent Echo</h3>
+                        <p class="book-desc">A gripping horror story that follows a family trapped in a house with a dark, whispering past.</p>
+                        <div class="book-meta">
+                            <span class="book-genre horror">Horror</span>
+                            <span class="book-status kindle"><i class='bx bxl-amazon'></i> Kindle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card glass-card" data-cursor="hover">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book2/300/400" alt="Book Cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <h3>Whispers of the Heart</h3>
+                        <p class="book-desc">A heartfelt romance about two strangers whose paths cross in the most unexpected way.</p>
+                        <div class="book-meta">
+                            <span class="book-genre romance">Romance</span>
+                            <span class="book-status kindle"><i class='bx bxl-amazon'></i> Kindle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card glass-card" data-cursor="hover">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book3/300/400" alt="Book Cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <h3>Beyond the Code</h3>
+                        <p class="book-desc">A tech-thriller exploring the fine line between artificial intelligence and human consciousness.</p>
+                        <div class="book-meta">
+                            <span class="book-genre thriller">Thriller</span>
+                            <span class="book-status"><i class='bx bx-book-open'></i> Paperback</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card glass-card" data-cursor="hover">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book4/300/400" alt="Book Cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <h3>Midnight Tales</h3>
+                        <p class="book-desc">A collection of short horror stories that will keep you awake past midnight.</p>
+                        <div class="book-meta">
+                            <span class="book-genre horror">Horror</span>
+                            <span class="book-status kindle"><i class='bx bxl-amazon'></i> Kindle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="book-card glass-card" data-cursor="hover">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book5/300/400" alt="Book Cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <h3>Love in Transit</h3>
+                        <p class="book-desc">A romance novel set across moving trains, where love finds its way through crowded stations.</p>
+                        <div class="book-meta">
+                            <span class="book-genre romance">Romance</span>
+                            <span class="book-status kindle"><i class='bx bxl-amazon'></i> Kindle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="book-card glass-card" data-cursor="hover">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book6/300/400" alt="Book Cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <h3>Fragments of Tomorrow</h3>
+                        <p class="book-desc">A dystopian novel about a world rebuilding itself after the great digital collapse.</p>
+                        <div class="book-meta">
+                            <span class="book-genre sci-fi">Sci-Fi</span>
+                            <span class="book-status"><i class='bx bx-book-open'></i> Paperback</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://amazon.com/author/adityarajpatil" target="_blank" class="btn primary-btn" data-cursor="hover">
+                    <span>See All Books on Kindle</span> <i class='bx bx-right-arrow-alt'></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <h2 class="section-title"><span class="title-num">06.</span> What's Next?</h2>
+            <div class="contact-content glass-card">
+                <h3 class="contact-heading">Get In Touch</h3>
+                <p>Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you
+                    have a question or just want to say hi, I'll try my best to get back to you!</p>
+
+                <form class="contact-form" id="contact-form">
+                    <input type="hidden" name="access_key" value="95597e28-7659-47e7-a260-944611939c1a">
+                    <input type="hidden" name="subject" value="New Contact Message from Portfolio">
+
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Name // sys.ident</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Email // sys.comm</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" name="message" required placeholder=" " rows="5"></textarea>
+                        <label for="message">Message // sys.payload</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn submit-btn" data-cursor="hover">
+                        <span>Send Message()</span>
+                        <i class='bx bx-send'></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with <i class='bx bx-code-alt'></i> by Adityaraj Patil</p>
+        <p class="footer-sub">&copy; 2026 Adityaraj Patil. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

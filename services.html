@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya | Services & Profile</title>
+    <meta name="description" content="Professional Profile and Services of Aditya">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* LinkedIn Style Overrides */
+        body {
+            background-color: #000000;
+            /* Slightly darker for better contrast with cards */
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-grid-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .profile-grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-card {
+            background: rgba(17, 24, 39, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Profile Header Card */
+        .cover-photo {
+            height: 200px;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(139, 92, 246, 0.4)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            position: relative;
+        }
+
+        .cover-photo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(17, 24, 39, 0.95), transparent);
+        }
+
+        .profile-info {
+            padding: 0 24px 24px;
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(17, 24, 39, 1);
+            margin-top: -75px;
+            position: relative;
+            z-index: 2;
+            background: var(--bg-surface);
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .profile-header-actions {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .profile-name {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .verification-badge {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .profile-headline {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .profile-location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .profile-connections {
+            margin-top: 10px;
+            color: var(--primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition-fast);
+        }
+
+        .action-primary {
+            background: var(--primary);
+            color: #000;
+            border: none;
+        }
+
+        .action-primary:hover {
+            background: #fff;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .action-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .action-secondary:hover {
+            background: rgba(14, 165, 233, 0.1);
+        }
+
+        /* Sections inside Cards */
+        .card-header {
+            padding: 20px 24px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .card-body {
+            padding: 10px 24px 24px;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Services Feed / Experience List */
+        .service-list-item {
+            display: flex;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .service-list-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .service-details h4 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .service-meta {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-price {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .service-cta {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid rgba(14, 165, 233, 0.5);
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: none;
+            transition: all var(--transition-fast);
+        }
+
+        .service-cta:hover {
+            background: rgba(14, 165, 233, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .special-icon {
+            color: var(--secondary);
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .profile-header-actions {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Background Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-tag">&lt;</span>
+            <span class="logo-text">Aditya.dev</span>
+            <span class="logo-tag">/&gt;</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#home">// Home</a>
+            <a href="index.html#about">// About</a>
+            <a href="index.html#journey">// Journey</a>
+            <a href="projects.html">// Projects</a>
+            <a href="index.html#products">// Products</a>
+            <a href="services.html" class="active">// Services</a>
+            <a href="index.html#contact">// Contact</a>
+        </div>
+        <div class="hamburger">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html#home">00. Home</a>
+        <a href="index.html#about">01. About</a>
+        <a href="index.html#journey">02. Journey</a>
+        <a href="projects.html">03. Projects</a>
+        <a href="index.html#products">04. Products</a>
+        <a href="services.html" class="active">05. Services</a>
+        <a href="index.html#contact">06. Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="profile-container">
+            <div class="profile-grid-layout">
+                <!-- LEFT COLUMN: Profile Details, About, Skills, Projects -->
+                <div class="profile-left-column">
+                    <!-- Header Card -->
+                    <div class="profile-card">
+                        <div class="cover-photo"></div>
+                        <div class="profile-info">
+                            <img src="assets/profile.jpg" alt="Adityaraj Patil" class="profile-avatar"
+                                onerror="this.src='https://ui-avatars.com/api/?name=Adityaraj+Patil&background=0ea5e9&color=fff&size=200'">
+
+                            <div class="profile-header-actions">
+                                <a href="https://patiladityaraj.netlify.app/" target="_blank"
+                                    class="action-btn action-secondary" data-cursor="hover"
+                                    title="Share my portfolio link"><i class='bx bx-share-alt'></i> Share</a>
+                            </div>
+
+                            <h1 class="profile-name">
+                                Adityaraj Patil
+                                <i class='bx bxs-badge-check verification-badge' title="Verified Developer"></i>
+                                <span
+                                    style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400; font-family: var(--font-sans);">(He/Him)</span>
+                            </h1>
+
+                            <h2 class="profile-headline" style="font-size: 1rem; line-height: 1.4;">Founder & CEO @
+                                DevineTech | Full Stack Developer | Author of 7 Books | IoT Consultant</h2>
+
+                            <div class="profile-location" style="font-size: 0.85rem;">
+                                <i class='bx bx-map'></i> Pune, Maharashtra, India · <a href="index.html#contact"
+                                    style="color: var(--primary); font-weight: 500;">Contact</a>
+                            </div>
+
+                            <div class="profile-connections" style="font-size: 0.85rem;">
+                                500+ connections
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <h3 class="card-title">About</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="about-text" style="font-size: 0.85rem;">
+                                Passionate Full-Stack Developer, Startup Founder, and multi-published Author dedicated
+                                to building scalable digital solutions. With hands-on experience in MERN stack, IoT
+                                integration, and hardware development, I help businesses and students turn innovative
+                                ideas into reality.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Services Summary (Glowing Chips) -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Featured Skills</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="hero-services-list" style="margin-bottom: 0; gap: 8px;">
+                                <span class="service-chip" style="font-size: 0.75rem; padding: 6px 12px;"
+                                    data-cursor="hover"><i class='bx bx-code-alt' style="font-size: 1rem;"></i>
+                                    HTML/CSS/JS</span>
+                                <span class="service-chip" style="font-size: 0.75rem; padding: 6px 12px;"
+                                    data-cursor="hover"><i class='bx bxl-react' style="font-size: 1rem;"></i> React &
+                                    Next.js</span>
+                                <span class="service-chip" style="font-size: 0.75rem; padding: 6px 12px;"
+                                    data-cursor="hover"><i class='bx bxl-nodejs' style="font-size: 1rem;"></i> Node.js &
+                                    Express</span>
+                                <span class="service-chip" style="font-size: 0.75rem; padding: 6px 12px;"
+                                    data-cursor="hover"><i class='bx bxl-mongodb' style="font-size: 1rem;"></i>
+                                    MongoDB</span>
+                                <span class="service-chip" style="font-size: 0.75rem; padding: 6px 12px;"
+                                    data-cursor="hover"><i class='bx bx-chip' style="font-size: 1rem;"></i> IoT &
+                                    Hardware</span>
+                                <span class="service-chip" style="font-size: 0.75rem; padding: 6px 12px;"
+                                    data-cursor="hover"><i class='bx bx-book-heart' style="font-size: 1rem;"></i>
+                                    Creative Writing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Projects Card -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top Projects</h3>
+                            <a href="projects.html" style="font-size: 0.85rem; color: var(--primary);"
+                                data-cursor="hover">View all</a>
+                        </div>
+                        <div class="card-body" style="padding-top: 5px;">
+                            <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px;">
+                                <div
+                                    style="width: 40px; height: 40px; background: rgba(14, 165, 233, 0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                    <i class='bx bx-store-alt' style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.95rem; color: var(--text-main);">Te Amo</h4>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted);">Full stack React & Node.js
+                                        store</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                <div
+                                    style="width: 40px; height: 40px; background: rgba(14, 165, 233, 0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                    <i class='bx bx-chip' style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.95rem; color: var(--text-main);">Women Safety Devices</h4>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted);">Hardware + Web Dashboard</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Services Feed -->
+                <div class="profile-right-column">
+                    <!-- Experience / Store Feed -->
+                    <div class="profile-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Services & Products Provided</h3>
+                        </div>
+                        <div class="card-body" style="padding-top: 0;">
+
+                            <!-- Item 1: Freelance/Custom Dev -->
+                            <div class="service-list-item">
+                                <div class="service-icon"><i class='bx bx-laptop'></i></div>
+                                <div class="service-details">
+                                    <h4>Custom Project & Software Development</h4>
+                                    <div class="service-meta">
+                                        <span>Freelance / Contract</span>
+                                        <span>•</span>
+                                        <span class="service-price">Project Based Pricing</span>
+                                    </div>
+                                    <p class="service-description">
+                                        Hire me to build scalable web applications, dynamic frontends, or full-stack
+                                        platforms specifically tailored to your business needs. I specialize in React,
+                                        Node.js, PHP, and modern UI/UX design. Also available for key roles in
+                                        innovative startups.
+                                    </p>
+                                    <a href="#enquiry-section" class="service-cta" data-cursor="hover">Inquire Now</a>
+                                </div>
+                            </div>
+
+                            <!-- Item 2: Store / Templates -->
+                            <div class="service-list-item">
+                                <div class="service-icon"><i class='bx bx-code-block'></i></div>
+                                <div class="service-details">
+                                    <h4>Premium Templates & Boilerplates (Buy Code)</h4>
+                                    <div class="service-meta">
+                                        <span>Digital Product</span>
+                                        <span>•</span>
+                                        <span class="service-price">Starts from 499 Rs</span>
+                                    </div>
+                                    <p class="service-description">
+                                        Purchase ready-to-use, highly customizable codebases. Available products include
+                                        a Cyberpunk-themed interactive portfolio, and a complete MERN-stack SaaS
+                                        boilerplate with authentication and payments integrated.
+                                    </p>
+                                    <a href="#enquiry-section" class="service-cta" data-cursor="hover">View Store</a>
+                                </div>
+                            </div>
+
+                            <!-- Item 3: Ghostwriting -->
+                            <div class="service-list-item">
+                                <div class="service-icon special-icon"><i class='bx bx-pen'></i></div>
+                                <div class="service-details">
+                                    <h4>Ghostwriting (Books & Novels)</h4>
+                                    <div class="service-meta">
+                                        <span>Creative Writing</span>
+                                        <span>•</span>
+                                        <span class="service-price" style="color: var(--secondary);"> Full Novel and
+                                            stories starts from 249 Rs
+                                        </span>
+                                    </div>
+                                    <p class="service-description">
+                                        Leverage my experience as a 7-time published author. Hire me to write compelling
+                                        novels, love stories, technical guides, or short stories. High-quality prose
+                                        tailored exactly to your vision.
+                                    </p>
+                                    <a href="#enquiry-section" class="service-cta"
+                                        style="border-color: rgba(139, 92, 246, 0.5); color: var(--secondary);"
+                                        data-cursor="hover">Commission Writing</a>
+                                </div>
+                            </div>
+
+                            <!-- Item 4: College Sessions & Mentorship -->
+                            <div class="service-list-item">
+                                <div class="service-icon"><i class='bx bx-chalkboard'></i></div>
+                                <div class="service-details">
+                                    <h4>College Tech Sessions & Career Guidance</h4>
+                                    <div class="service-meta">
+                                        <span>Consulting & Mentorship</span>
+                                        <span>•</span>
+                                        <span class="service-price">Session Rate Negotiable</span>
+                                    </div>
+                                    <p class="service-description">
+                                        Book me to conduct hands-on seminars and sessions at your college on Web
+                                        Development, IoT, and building successful tech communities. I also provide
+                                        1-on-1 career counseling and guidance for aspiring engineers.
+                                    </p>
+                                    <a href="#enquiry-section" class="service-cta" data-cursor="hover">Book a
+                                        Session</a>
+                                </div>
+                            </div>
+
+                            <!-- Item 5: IoT & Hardware -->
+                            <div class="service-list-item">
+                                <div class="service-icon"><i class='bx bx-chip'></i></div>
+                                <div class="service-details">
+                                    <h4>IoT Products, Hardware & Final Year Projects</h4>
+                                    <div class="service-meta">
+                                        <span>Hardware & Engineering</span>
+                                        <span>•</span>
+                                        <span class="service-price">Starting at 499 Rs</span>
+                                    </div>
+                                    <p class="service-description">
+                                        Need help building hardware? I provide wiring schematics, source code, and
+                                        complete setups for smart home systems (like Women Safety devices and Smart
+                                        Bins). I also mentor and help build complete final-year engineering projects and
+                                        DIY crafts.
+                                    </p>
+                                    <a href="#enquiry-section" class="service-cta" data-cursor="hover">Request
+                                        Hardware</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- DIRECT ENQUIRY FORM CARD -->
+                    <div class="profile-card" id="enquiry-section">
+                        <div class="card-header">
+                            <h3 class="card-title">Direct Enquiry</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="service-enquiry-form" class="enquiry-form">
+                                <input type="hidden" name="access_key" value="95597e28-7659-47e7-a260-944611939c1a">
+                                <input type="hidden" name="subject" value="New Service Enquiry from Portfolio">
+                                
+                                <div class="form-group">
+                                    <label for="enquiry-name">Full Name</label>
+                                    <input type="text" id="enquiry-name" name="name" placeholder="E.g., John Doe"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-service">Select Service</label>
+                                    <select id="enquiry-service" name="service" required>
+                                        <option value="" disabled selected>Choose a service...</option>
+                                        <option value="custom_dev">Custom Project & Development</option>
+                                        <option value="buy_code">Buy Premium Code/Templates</option>
+                                        <option value="ghostwriting">Ghostwriting (Novel/Love)</option>
+                                        <option value="college_session">Conduct College Session</option>
+                                        <option value="iot_hardware">IoT Projects & Hardware</option>
+                                        <option value="career_guidance">Career Counseling / Mentorship</option>
+                                        <option value="other">Other / Custom Request</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="enquiry-email">Email Address</label>
+                                        <input type="email" id="enquiry-email" name="email"
+                                            placeholder="john@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="enquiry-mobile">Mobile Number</label>
+                                        <input type="tel" id="enquiry-mobile" name="mobile" placeholder="+91 9876543210"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-details">Short Details</label>
+                                    <textarea id="enquiry-details" name="details" rows="4"
+                                        placeholder="Briefly describe your project requirements, goals, or timeline..."
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="action-btn action-primary"
+                                    style="width: 100%; justify-content: center; margin-top: 10px; font-size: 1rem; padding: 12px;"
+                                    data-cursor="hover">
+                                    <i class='bx bx-send'></i> Send Enquiry
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" class="action-btn action-secondary" style="display: inline-flex; width: auto;"
+                    data-cursor="hover">
+                    <i class='bx bx-left-arrow-alt'></i> Back to Portfolio
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with <i class='bx bx-code-alt'></i> by Adityaraj Patil</p>
+        <p class="footer-sub">&copy; 2026 Adityaraj Patil. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

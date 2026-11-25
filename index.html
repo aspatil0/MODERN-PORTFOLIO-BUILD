@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Adityaraj Patil — The Anthology</title>
   <meta name="description" content="Adityaraj Patil — full-stack developer, author of seven books, AI enthusiast and inventor with patents and research papers." />
-  <meta name="theme-color" content="#EFEBE3" />
+  <meta name="theme-color" content="#12110f" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
   <script>
-    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    var t = 'dark';
+    try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+    document.documentElement.dataset.theme = t;
   </script>
 </head>
 <body>
@@ -31,6 +36,10 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-end">
+      <a class="builds-btn" href="builds.html" aria-label="Latest builds" data-tip="Latest build">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.5 5.2 2.3 8 7.5 10.5-5.2 2.5-7 5.3-7.5 10.5-.5-5.2-2.3-8-7.5-10.5C9.7 9.5 11.5 6.7 12 1.5Z"/></svg>
+        <span class="builds-new mono" aria-hidden="true">New</span>
+      </a>
       <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" fill="currentColor"/></svg>
       </button>
@@ -78,7 +87,8 @@
         <li><a class="pill" href="https://github.com/aspatil0" target="_blank" rel="noopener">GitHub</a></li>
         <li><a class="pill" href="https://linkedin.com/in/adityarajpatil/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a class="pill" href="https://x.com/itsme_asp" target="_blank" rel="noopener">X / Twitter</a></li>
-        <li><a class="pill" href="https://amazon.com/author/adityarajpatil" target="_blank" rel="noopener">Amazon Author</a></li>
+        <li><a class="pill" href="https://www.youtube.com/@TheAdityarajDiaries" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a class="pill" href="https://www.amazon.in/Love-Cant-Hold-Heartbreaking-Regret-ebook/dp/B0FLJ2QGN7" target="_blank" rel="noopener">Amazon Author</a></li>
       </ul>
 
       <figure class="motto">
@@ -126,7 +136,7 @@
           <span class="p-idx mono">03</span>
           <h3>The Inventor</h3>
           <div class="p-body">
-            <p>Patented and copyrighted IoT devices, from a women-safety wearable to a QR scam scanner. Two-time hackathon podium.</p>
+            <p>A patented women-safety device and a research paper on QR scam detection, plus more IoT builds. Two-time hackathon podium.</p>
             <a href="#lab" class="p-link">Visit the lab →</a>
           </div>
           <span class="p-glyph" aria-hidden="true">⌁</span>
@@ -136,7 +146,7 @@
           <h3>The AI Enthusiast</h3>
           <div class="p-body">
             <p>Building with LLMs and ML: Gemini-powered tools, AI matchmaking, and the SaaS products I have in development.</p>
-            <a href="#work" class="p-link" data-filter-link="ai">AI projects →</a>
+            <a href="work.html?f=ai" class="p-link">AI projects →</a>
           </div>
           <span class="p-glyph" aria-hidden="true">✳</span>
         </article>
@@ -156,21 +166,15 @@
       <header class="ch-head reveal">
         <span class="ch-num">II.</span>
         <h2 class="ch-title">Selected <em>work</em></h2>
-        <p class="ch-note mono" id="workCount">— projects</p>
+        <p class="ch-note mono">Five flagships · hover a card</p>
       </header>
 
-      <div class="filters reveal" role="tablist" aria-label="Filter projects">
-        <button role="tab" class="chip is-active" data-filter="all" aria-selected="true">All</button>
-        <button role="tab" class="chip" data-filter="frontend" aria-selected="false">Frontend</button>
-        <button role="tab" class="chip" data-filter="backend" aria-selected="false">Backend</button>
-        <button role="tab" class="chip" data-filter="fullstack" aria-selected="false">Full Stack</button>
-        <button role="tab" class="chip" data-filter="saas" aria-selected="false">SaaS</button>
-        <button role="tab" class="chip" data-filter="ai" aria-selected="false">AI</button>
-        <button role="tab" class="chip" data-filter="iot" aria-selected="false">IoT &amp; Hardware</button>
-      </div>
+      <div class="featured reveal" id="featured"></div>
 
-      <ol class="work-list" id="workList"></ol>
-      <div class="work-preview" id="workPreview" aria-hidden="true"><span></span></div>
+      <div class="all-cta reveal">
+        <p class="serif"><em>Plus apps, IoT builds and experiments.</em></p>
+        <a class="btn btn-ink" href="work.html">See all projects <sup class="mono" id="allCount">00</sup> <span class="arr">→</span></a>
+      </div>
     </section>
 
     <!-- ============ III. LIBRARY ============ -->
@@ -197,7 +201,7 @@
             <span class="tag" id="bGenre"></span>
             <span class="tag" id="bFormat"></span>
           </div>
-          <a class="btn btn-ink" href="https://amazon.com/author/adityarajpatil" target="_blank" rel="noopener">Find it on Amazon <span class="arr">↗</span></a>
+          <a class="btn btn-ink" id="bookAmazonLink" href="https://www.amazon.in/Love-Cant-Hold-Heartbreaking-Regret-ebook/dp/B0FLJ2QGN7" target="_blank" rel="noopener">Find it on Amazon <span class="arr">↗</span></a>
         </div>
       </div>
 
@@ -210,16 +214,16 @@
       <header class="ch-head reveal">
         <span class="ch-num">IV.</span>
         <h2 class="ch-title">The <em>lab</em>: patents &amp; papers</h2>
-        <p class="ch-note mono">Filed, stamped, protected</p>
+        <p class="ch-note mono">Two on record · the rest in the notebook</p>
       </header>
 
       <div class="lab-split">
         <div class="lab-col reveal">
-          <h3 class="lab-h mono">Patents &amp; copyrights</h3>
+          <h3 class="lab-h mono">On record: patent &amp; research papers</h3>
           <div class="docs" id="patents"></div>
         </div>
         <div class="lab-col reveal">
-          <h3 class="lab-h mono">Research papers &amp; protected ideas</h3>
+          <h3 class="lab-h mono">The notebook: concepts I&#39;m researching</h3>
           <ul class="papers" id="papers"></ul>
         </div>
       </div>
@@ -297,7 +301,8 @@
             <li><a href="https://github.com/aspatil0" target="_blank" rel="noopener">GitHub ↗</a></li>
             <li><a href="https://linkedin.com/in/adityarajpatil/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
             <li><a href="https://x.com/itsme_asp" target="_blank" rel="noopener">X / Twitter ↗</a></li>
-            <li><a href="https://amazon.com/author/adityarajpatil" target="_blank" rel="noopener">Amazon ↗</a></li>
+            <li><a href="https://www.youtube.com/@TheAdityarajDiaries" target="_blank" rel="noopener">YouTube ↗</a></li>
+            <li><a href="https://www.amazon.in/Love-Cant-Hold-Heartbreaking-Regret-ebook/dp/B0FLJ2QGN7" target="_blank" rel="noopener">Amazon ↗</a></li>
           </ul>
         </div>
 
@@ -328,6 +333,7 @@
     </div>
   </footer>
 
+  <script src="js/projects.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>

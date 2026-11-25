@@ -4,36 +4,14 @@
    ========================================================= */
 
 /* ------------------------- DATA ------------------------- */
-// cats: frontend | backend | fullstack | saas | ai | iot
-const PROJECTS = [
-  { title: "Gemini Clone", note: "© Idea & research paper", desc: "A Gemini-style AI chat built with React and the Gemini API, with saved history and prompt search.", cats: ["ai", "frontend"], stack: ["React", "Gemini API"], url: "https://aditya-geminiai.vercel.app/" },
-  { title: "CoupleMate", note: "AI / ML matchmaking", desc: "AI/ML-powered matchmaking with real-time chat between matched users.", cats: ["ai", "fullstack"], stack: ["ML", "Realtime"], url: "" },
-  { title: "Novel Scam Scanner", note: "© Patented", desc: "Scans QR codes and transaction IDs, verifies them against an API, and warns before a fraudulent payment goes through.", cats: ["iot", "ai"], stack: ["IoT", "API"], url: "" },
-  { title: "Mission Feed India", note: "© Idea & research paper", desc: "A food-redistribution platform that routes surplus meals to people who need them.", cats: ["fullstack", "backend"], stack: ["PHP", "MySQL"], url: "https://github.com/aspatil0/Mission-Feed-India-_Food-Redistribution-Web-Platform" },
-  { title: "Flatmate (Myroomies)", note: "© Idea & research paper", desc: "Finds compatible flatmates by budget, lifestyle, location and habits, with secure messaging.", cats: ["fullstack", "saas"], stack: ["MERN"], url: "" },
-  { title: "Te Amo", note: "© Idea & research paper", desc: "A private space for couples: shared memories, mood tracking, love notes and reminders.", cats: ["fullstack", "saas"], stack: ["Web App"], url: "" },
-  { title: "You & Me", note: "© Idea & research paper", desc: "Random blind dates matched on interests, personality or location, kept safe online.", cats: ["fullstack"], stack: ["Web App"], url: "" },
-  { title: "Engi World", note: "SaaS · in development", desc: "A hub for engineering students with resources, projects, internships and networking.", cats: ["saas"], stack: ["Platform"], url: "" },
-  { title: "ParseMe", note: "SaaS · in development", desc: "Parses code and documents into structured data, flags syntax errors, and cleans up messy text.", cats: ["saas", "ai"], stack: ["Dev Tool"], url: "" },
-  { title: "Node Net", note: "© Idea & research paper", desc: "A decentralised network where companies, acting as nodes, share resources and computing power directly with each other.", cats: ["saas", "backend"], stack: ["Distributed"], url: "" },
-  { title: "Hospital Management", note: "Backend system", desc: "Patient records, doctor schedules and day-to-day hospital operations in one system.", cats: ["backend"], stack: ["PHP", "MySQL"], url: "https://github.com/aspatil0/MY-PHP-PROJECTS/tree/main/HOSPITAL%20MANAGEMNET" },
-  { title: "CC-Lab Management", note: "Backend system", desc: "Manages computer-lab machines, schedules and usage.", cats: ["backend"], stack: ["PHP", "JS"], url: "https://github.com/aspatil0/MY-PHP-PROJECTS/tree/main/CC-LAB-PROJECT" },
-  { title: "DevineTech Website", note: "My startup", desc: "Business site for DevineTech, covering internships and client management.", cats: ["frontend"], stack: ["HTML/CSS", "JS"], url: "https://devine-tech.netlify.app/" },
-  { title: "E-Stationary", note: "Frontend", desc: "Lets local shop owners manage their business with no database to buy.", cats: ["frontend"], stack: ["JS", "LocalStorage"], url: "https://tesnary.netlify.app/" },
-  { title: "Neon Tic-Tac-Toe", note: "Frontend", desc: "Tic-tac-toe with neon effects and a dynamic winner screen.", cats: ["frontend"], stack: ["JavaScript"], url: "https://aditya-tictactoe.vercel.app/" },
-  { title: "To-Do List", note: "Frontend", desc: "My personal task manager, saved in the browser with LocalStorage.", cats: ["frontend"], stack: ["JavaScript"], url: "https://adi-todo.netlify.app/" },
-  { title: "Women Safety Device", note: "© Patented · Award winner", desc: "Panic button that sends live GPS over GSM, places an emergency call and sounds an alarm.", cats: ["iot"], stack: ["IoT", "GSM", "GPS"], url: "" },
-  { title: "Anti-Sleep Alarm", note: "© Patented", desc: "Steering-wheel sensors detect a drowsy driver and trigger an alarm.", cats: ["iot"], stack: ["Arduino"], url: "" },
-  { title: "Smart Bin", note: "© Patented", desc: "Opens its lid hands-free with ultrasonic sensors and monitors how full it is.", cats: ["iot"], stack: ["Sensors"], url: "" },
-  { title: "Colour-Sorting Robotic Arm", note: "© Patented", desc: "Servo arm that picks objects by colour using a TCS3200 sensor.", cats: ["iot"], stack: ["Arduino", "Servo"], url: "" },
-];
+// PROJECTS lives in js/projects.js (shared with work.html).
 
 // Covers live in assets/books/. bk = spine tint, h/w = spine size in px.
 const BOOKS = [
   { title: "Last Six Days", cover: "last-six-days.jpg", genre: "Crime thriller", type: "Novel", tagline: "Time is running. Death is writing.",
     blurb: "A woman receives a note: only six days remain. A serial threat closes in on the city, and the countdown has already started.", bk: "#2a0c0c", h: 238, w: 58 },
   { title: "The Love I Can't Hold", cover: "the-love-i-cant-hold.jpg", genre: "Romance", type: "Novel", tagline: "Some feelings stay… even when you're not together.",
-    blurb: "A story about a love that never quite ends, even after two people stop walking the same road.", bk: "#5a2346", h: 224, w: 54 },
+    blurb: "A story about a love that never quite ends, even after two people stop walking the same road.", bk: "#5a2346", h: 224, w: 54, url: "https://www.amazon.in/Love-Cant-Hold-Heartbreaking-Regret-ebook/dp/B0FLJ2QGN7" },
   { title: "I Killed Myself", cover: "i-killed-myself.jpg", genre: "Psychological thriller", type: "Novel", tagline: "One body. Two minds. Countless crimes.",
     blurb: "Who is real, and who is the killer? A dark thriller about one man and the other mind living inside him.", bk: "#1c1416", h: 262, w: 60 },
   { title: "Do You Still Love Me?", cover: "do-you-still-love-me.jpg", genre: "Romance", type: "Novel", tagline: "One question every heart is afraid to ask.",
@@ -46,28 +24,27 @@ const BOOKS = [
     blurb: "A lone warrior, an army of the damned, and a curse written in blood. A dark samurai epic.", bk: "#3a0d0d", h: 242, w: 58 },
 ];
 
+// The two works on record. creds = what exists for each one.
 const PATENTS = [
-  { no: "PAT-01", title: "Women Safety Device", desc: "Wearable panic system with live GPS over GSM, an auto emergency call and an alarm. Won the TCOER Tech Exhibition 2024 and was runner-up at VIT Hackathon 2024.", tags: ["IoT", "Hardware"] },
-  { no: "PAT-02", title: "Novel Scanner for Scam Detection", desc: "Checks QR codes and transaction IDs before a payment goes through, to stop digital payment fraud.", tags: ["IoT", "FinSec"] },
-  { no: "PAT-03", title: "Anti-Sleep Alarm", desc: "Detects a drowsy driver through steering-wheel sensors and sounds an alarm.", tags: ["IoT", "Safety"] },
-  { no: "PAT-04", title: "Smart Bin", desc: "Ultrasonic sensors open the lid hands-free and report how full the bin is.", tags: ["IoT", "Civic"] },
-  { no: "PAT-05", title: "Colour-Sorting Robotic Arm", desc: "Servo arm that detects and lifts objects by colour with a TCS3200 sensor.", tags: ["Robotics"] },
+  { no: "REC-01", title: "Women Safety Device", stamp: "PATENTED ©", creds: ["Patented", "Research paper"],
+    desc: "Wearable panic system with live GPS over GSM, an auto emergency call and an alarm. Won the TCOER Tech Exhibition 2024 and was runner-up at VIT Hackathon 2024.", tags: ["IoT", "GSM", "GPS"] },
+  { no: "REC-02", title: "Novel Scanner for Scam Detection", stamp: "RESEARCH PAPER", creds: ["Research paper"],
+    desc: "Checks QR codes and transaction IDs against an API before a payment goes through, to stop digital payment fraud.", tags: ["IoT", "FinSec"] },
 ];
 
+// Concepts I'm researching on my own. No patents or papers filed for these.
 const PAPERS = [
-  { title: "IoT Research Paper", desc: "Published research on IoT systems, drawn from my hardware work.", type: "Research paper" },
-  { title: "Mission Feed India", desc: "A model for redistributing surplus food at scale.", type: "Paper · ©" },
-  { title: "Node Net", desc: "A decentralised network for sharing resources between companies.", type: "Paper · ©" },
-  { title: "Flatmate", desc: "Matching flatmates by preference.", type: "Idea · ©" },
-  { title: "ParseMe", desc: "Turning unstructured code and text into structured data.", type: "Idea · ©" },
-  { title: "Engi World", desc: "A community platform for engineering students.", type: "Idea · ©" },
-  { title: "Te Amo & You and Me", desc: "Two relationship and dating platform concepts.", type: "Idea · ©" },
+  { title: "AI Orchestration", desc: "How several AI models and agents can be coordinated to plan, split and finish one task together.", type: "Researching" },
+  { title: "Node Net", desc: "A decentralised network where companies, acting as nodes, share resources and computing power.", type: "Concept" },
+  { title: "ParseMe", desc: "Turning unstructured code and text into clean, structured data.", type: "Concept" },
+  { title: "CoupleMate", desc: "AI/ML matchmaking with real-time chat between matched users.", type: "Concept" },
+  { title: "Te Amo & You and Me", desc: "Two relationship and dating platform ideas: a private space for couples, and safe blind dates.", type: "Concept" },
 ];
 
 const TOOLKIT = [
   { side: "Side A", name: "Frontend", tracks: [["HTML & CSS", "every project"], ["JavaScript", "daily driver"], ["React", "Gemini Clone"], ["Next.js", "SaaS builds"], ["Responsive UI", "mobile first"]] },
   { side: "Side A", name: "Backend & Data", tracks: [["Node.js & Express", "MERN apps"], ["PHP", "Hospital, CC-Lab"], ["MongoDB", "MERN apps"], ["MySQL", "Mission Feed"], ["REST APIs", "everywhere"]] },
-  { side: "Side B", name: "AI & Hardware", tracks: [["LLM APIs (Gemini)", "AI tools"], ["ML matchmaking", "CoupleMate"], ["Arduino", "patented devices"], ["GSM / GPS modules", "safety device"], ["Sensors & servos", "robotics"]] },
+  { side: "Side B", name: "AI & Hardware", tracks: [["LLM APIs (Gemini)", "AI tools"], ["ML matchmaking", "CoupleMate"], ["Arduino", "IoT builds"], ["GSM / GPS modules", "safety device"], ["Sensors & servos", "robotics"]] },
   { side: "Side B", name: "Beyond Code", tracks: [["Technical writing", "research papers"], ["Storytelling", "seven books"], ["Teaching", "1500+ students"], ["Leadership", "3+ teams"], ["Public speaking", "20+ sessions"]] },
 ];
 
@@ -99,9 +76,11 @@ const store = {
 /* ------------------------ THEME ------------------------ */
 $("#themeBtn").addEventListener("click", () => {
   const root = document.documentElement;
-  const isDark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDark = root.dataset.theme !== "light";
   root.dataset.theme = isDark ? "light" : "dark";
   store.set("theme", root.dataset.theme);
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = isDark ? "#efebe3" : "#12110f";
 });
 
 /* ------------------------- NAV ------------------------- */
@@ -167,54 +146,27 @@ const cio = new IntersectionObserver((entries) => {
 $$("[data-count-to]").forEach((el) => cio.observe(el));
 
 /* ------------------------- WORK ------------------------ */
-const workList = $("#workList");
-workList.innerHTML = PROJECTS.map((p, i) => {
-  const tag = p.url ? "a" : "div";
-  const attrs = p.url ? `href="${esc(p.url)}" target="_blank" rel="noopener"` : `tabindex="0"`;
-  return `<li class="work-item" data-cats="${p.cats.join(" ")}">
-    <${tag} class="work-row" ${attrs} data-title="${esc(p.title)}">
-      <span class="w-num">${pad(i + 1)}</span>
-      <span class="w-title">${esc(p.title)}<small>${esc(p.note)}</small></span>
-      <p class="w-desc">${esc(p.desc)}</p>
-      <span class="w-cats">${p.stack.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</span>
-      <span class="w-arrow" aria-hidden="true">${p.url ? "↗" : "→"}</span>
-    </${tag}>
-  </li>`;
-}).join("");
-
-const counts = { all: PROJECTS.length };
-PROJECTS.forEach((p) => p.cats.forEach((c) => (counts[c] = (counts[c] || 0) + 1)));
-$$(".chip").forEach((c) => c.insertAdjacentHTML("beforeend", `<sup>${pad(counts[c.dataset.filter] || 0)}</sup>`));
+// Flagship projects as cards; the full list lives on work.html.
+const FEATURED = PROJECTS.filter((p) => p.featured);
+const GH_ICON = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>';
+$("#featured").innerHTML = FEATURED.map((p, i) => `
+  <a class="fcard${i === 0 ? " fcard-lead" : ""}" href="${esc(p.github || p.live)}" target="_blank" rel="noopener" style="--d:${i * 80}ms">
+    <span class="f-top"><span class="f-num">${pad(i + 1)}</span><span class="f-status"><i></i>${esc(p.status)}</span></span>
+    <span class="f-mark" aria-hidden="true">${esc(p.title.replace(/\s.*$/, "").slice(0, 2))}</span>
+    <span class="f-body">
+      <small class="f-note">${esc(p.note)}</small>
+      <h3 class="f-title">${esc(p.title)}</h3>
+      <em class="f-tag">${esc(p.tagline)}</em>
+      <p class="f-desc">${esc(p.desc)}</p>
+    </span>
+    <span class="f-foot">
+      <span class="f-stack">${p.stack.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</span>
+      <span class="f-go">${p.github ? GH_ICON + " GitHub" : "Live"} <b aria-hidden="true">↗</b></span>
+    </span>
+  </a>`).join("");
+$("#allCount").textContent = pad(PROJECTS.length);
 $('[data-count="projects"]').textContent = `[${pad(PROJECTS.length)}]`;
 $('[data-count="lab"]').textContent = `[${pad(PATENTS.length + PAPERS.length)}]`;
-
-function applyFilter(f) {
-  $$(".chip").forEach((c) => { const on = c.dataset.filter === f; c.classList.toggle("is-active", on); c.setAttribute("aria-selected", on); });
-  let n = 0;
-  $$(".work-item").forEach((li) => {
-    const show = f === "all" || li.dataset.cats.split(" ").includes(f);
-    li.classList.toggle("hide", !show);
-    if (show) li.querySelector(".w-num").textContent = pad(++n);
-  });
-  $("#workCount").textContent = `${pad(n)} ${f === "all" ? "projects" : "in " + $(`.chip[data-filter="${f}"]`).firstChild.textContent.trim()}`;
-}
-$$(".chip").forEach((c) => c.addEventListener("click", () => applyFilter(c.dataset.filter)));
-$$("[data-filter-link]").forEach((a) => a.addEventListener("click", () => applyFilter(a.dataset.filterLink)));
-applyFilter("all");
-
-/* floating preview that follows the cursor */
-const prev = $("#workPreview"), prevTxt = prev.firstElementChild;
-let px = 0, py = 0, tx = 0, ty = 0, raf = 0;
-const follow = () => { px += (tx - px) * 0.18; py += (ty - py) * 0.18; prev.style.left = px + "px"; prev.style.top = py + "px"; raf = requestAnimationFrame(follow); };
-workList.addEventListener("pointerover", (e) => {
-  const row = e.target.closest(".work-row");
-  if (!row || e.pointerType !== "mouse") return;
-  prevTxt.textContent = row.dataset.title;
-  prev.classList.add("on");
-  if (!raf) { px = tx = e.clientX; py = ty = e.clientY; follow(); }
-});
-workList.addEventListener("pointermove", (e) => { tx = e.clientX + 150; ty = e.clientY - 20; });
-workList.addEventListener("pointerleave", () => { prev.classList.remove("on"); cancelAnimationFrame(raf); raf = 0; });
 
 /* ------------------------ LIBRARY ---------------------- */
 const shelf = $("#shelf");
@@ -238,6 +190,7 @@ function showBook(i, animate = true) {
     $("#bGenre").textContent = b.genre;
     $("#bFormat").textContent = b.type;
     $("#bTag").textContent = b.tagline;
+    $("#bookAmazonLink").href = b.url || "https://amazon.com/author/adityarajpatil";
   };
   if (animate && !reduceMotion) {
     book3d.classList.remove("swap"); void book3d.offsetWidth; book3d.classList.add("swap");
@@ -258,9 +211,10 @@ $("#patents").innerHTML = PATENTS.map((p) => `
   <article class="doc">
     <span class="doc-no">${esc(p.no)}</span>
     <h4>${esc(p.title)}</h4>
+    <div class="d-creds">${p.creds.map((c) => `<span>✓ ${esc(c)}</span>`).join("")}</div>
     <p>${esc(p.desc)}</p>
     <div class="d-tags">${p.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-    <span class="stamp">PATENTED ©</span>
+    <span class="stamp">${esc(p.stamp)}</span>
   </article>`).join("");
 $("#papers").innerHTML = PAPERS.map((p) => `
   <li><div><h4>${esc(p.title)}</h4><p>${esc(p.desc)}</p></div><span class="ptype">${esc(p.type)}</span></li>`).join("");

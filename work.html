@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Projects — Adityaraj Patil</title>
+  <meta name="description" content="Every project by Adityaraj Patil: SaaS platforms, mobile apps, AI tools, frontend builds and patented IoT devices." />
+  <meta name="theme-color" content="#12110f" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+  <script>
+    var t = 'dark';
+    try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+    document.documentElement.dataset.theme = t;
+  </script>
+</head>
+<body class="work-page">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav scrolled" id="top">
+    <a class="back" href="index.html#work"><span aria-hidden="true">←</span> Back to the anthology</a>
+    <div class="nav-end">
+      <a class="builds-btn" href="builds.html" aria-label="Latest builds" data-tip="Latest build">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.5 5.2 2.3 8 7.5 10.5-5.2 2.5-7 5.3-7.5 10.5-.5-5.2-2.3-8-7.5-10.5C9.7 9.5 11.5 6.7 12 1.5Z"/></svg>
+        <span class="builds-new mono" aria-hidden="true">New</span>
+      </a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" fill="currentColor"/></svg>
+      </button>
+      <a class="btn btn-ink" href="index.html#contact">Let's talk <span class="arr">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="chapter">
+      <header class="ch-head">
+        <span class="ch-num">II.</span>
+        <h1 class="ch-title">All <em>projects</em></h1>
+        <p class="ch-note mono" id="workCount">— projects</p>
+      </header>
+
+      <div class="filters" role="tablist" aria-label="Filter projects">
+        <button role="tab" class="chip is-active" data-filter="all" aria-selected="true">All</button>
+        <button role="tab" class="chip" data-filter="saas" aria-selected="false">SaaS</button>
+        <button role="tab" class="chip" data-filter="fullstack" aria-selected="false">Full Stack</button>
+        <button role="tab" class="chip" data-filter="mobile" aria-selected="false">Mobile</button>
+        <button role="tab" class="chip" data-filter="frontend" aria-selected="false">Frontend</button>
+        <button role="tab" class="chip" data-filter="backend" aria-selected="false">Backend</button>
+        <button role="tab" class="chip" data-filter="ai" aria-selected="false">AI</button>
+        <button role="tab" class="chip" data-filter="iot" aria-selected="false">IoT &amp; Hardware</button>
+      </div>
+
+      <ul class="pgrid" id="pgrid"></ul>
+    </section>
+  </main>
+
+  <!-- Enquiry form for projects without a public repo or live site -->
+  <dialog class="enq-dialog" id="enqDialog" aria-labelledby="enqTitle">
+    <button class="enq-close" id="enqClose" type="button" aria-label="Close enquiry form">×</button>
+    <form class="letter" id="enqForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="95597e28-7659-47e7-a260-944611939c1a" />
+      <input type="hidden" name="subject" id="enqSubject" value="Project enquiry from your portfolio" />
+      <input type="hidden" name="project" id="enqProject" value="" />
+      <p class="letter-head serif" id="enqTitle"><em>Dear Aditya,</em></p>
+      <p style="margin:0">I'm curious about <strong class="enq-proj" id="enqName">this project</strong>.</p>
+      <label>My name is <input type="text" name="name" required placeholder="your name" autocomplete="name" /></label>
+      <label>and you can reach me at <input type="email" name="email" required placeholder="you@email.com" autocomplete="email" /></label>
+      <label class="block">I'd like to know
+        <textarea name="message" rows="3" required placeholder="a demo, the source, a collaboration…"></textarea>
+      </label>
+      <div class="letter-foot">
+        <button class="btn btn-accent" type="submit">Send enquiry <span class="arr">→</span></button>
+        <span class="mono small" id="enqStatus" role="status"></span>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <div class="foot-row mono small">
+      <span>© 2026 Adityaraj Patil.</span>
+      <a href="index.html">Back to page one ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/work.js"></script>
+</body>
+</html>
